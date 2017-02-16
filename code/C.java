@@ -91,7 +91,7 @@ public class C extends Configured implements Tool {
 			String filenameStr = ((FileSplit) context.getInputSplit()).getPath().getName(); //getting the name of the file
 			filename = new Text(filenameStr);
 
-			for (String token : value.toString().split("\\s+")) {
+			for (String token : value.toString().replaceAll("[^A-Za-z0-9]"," ").split("\\s+")){
 				if (!stopwords.contains(token.toLowerCase())) {
 					word.set(token.toLowerCase()); //setting words to lower case to avoid duplicates
 					context.write(word, filename);
