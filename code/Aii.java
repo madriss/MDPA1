@@ -67,7 +67,7 @@ public class Aii extends Configured implements Tool {
 		@Override
 		public void map(LongWritable key, Text value, Context context)
 				throws IOException, InterruptedException {
-			for (String token : value.toString().replaceAll("[^A-Za-z0-9]"," ").split("\\s+")) {//here we split each word
+			for (String token : value.toString().split("\\s+")) {//here we split each word
 				word.set(token.toLowerCase()); // we set each token to its lower case form in order to avoid words starting with an uppercase being different from lowercase words
 				context.write(word, ONE);
 			}
