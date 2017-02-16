@@ -53,11 +53,6 @@ hadoop jar StopWords.jar edu.stanford.cs246.invertedindex.Ai input output
 In order to get the final csv file we execute the following command in a terminal:
 
 ```
-To run our first hadoop job we open a terminal and execute the following command:
-
-```
-hadoop jar StopWords.jar edu.stanford.cs246.invertedindex.Ai input output
-```
 hadoop fs -getmerge output result.csv
 ```
 Here are the first lines of the obtained result:
@@ -82,7 +77,7 @@ Here are screencaptures of the logs obtained by browsing: localhost:8088/cluster
 ![Screenshot1](images/1.png)
 ![Screenshot3](images/3.png)
 
-Find here the [code](/code/Ai.java) and [output](/code/results.csv).
+Find here the [code](/code/Ai.java) and [output](/code/result_i.csv).
 
 #### ii) using a combiner:
 We simply need to add the following line of code: `job.setCombinerClass(Reduce.class);`
@@ -96,7 +91,7 @@ Here are the associated screeshots:
 ![Screenshot1](images/4s.png)
 ![Screenshot3](images/5.png)
 
-Find here the [code](/code/Aii.java) and [output](/code/results_ii.csv).
+Find here the [code](/code/Aii.java) and [output](/code/result_ii.csv).
 
 #### iii) Compressing the intermediate result of Map:
 We can use any of the codecs included in Hadoop:
@@ -124,7 +119,7 @@ Here are the associated screeshots:
 ![Screenshot1](images/6.png)
 ![Screenshot3](images/7.png)
 
-Find here the [code](/code/Aiii.java) and [output](/code/results_iii.csv).
+Find here the [code](/code/Aiii.java) and [output](/code/result_iii.csv).
 
 #### iv) Using 50 reducers:
 We only need to change this line: `job.setNumReduceTasks(50)` from the previous code. Here are the obtained results:
@@ -137,7 +132,7 @@ Here are the associated screeshots:
 ![Screenshot1](images/8.png)
 ![Screenshot3](images/9.png)
 
-Find here the [code](/code/Aiv.java) and [output](/code/results_iv.csv).
+Find here the [code](/code/Aiv.java) and [output](/code/result_iv.csv).
 
 In this case we see a large difference when comparing to the previous executions. Eventhough the average reduce time is the same, since we have 50 reducers, the total time increases.
 
@@ -156,7 +151,7 @@ Here are the associated screeshots:
 ![Screenshot1](images/10.png)
 ![Screenshot3](images/11.png)
 
-Find here the [code](/code/B.java) and [output](/code/results_b.csv).
+Find here the [code](/code/B.java) and [output](/code/result_b.csv).
 Here is a sample of the resulting file: 
 ```
 brigden; -> pg31100.txt
@@ -185,7 +180,7 @@ Here are the associated screeshots:
 ![Screenshot1](images/12.png)
 ![Screenshot3](images/13.png)
 
-Find here the [code](/code/C.java) and [output](/code/results_c.csv).
+Find here the [code](/code/C.java) and [output](/code/result_c.csv).
 
 ### D) Extend the inverted index of (b), in order to keep the frequency of each word for each document. The new output should be of the form:
 
@@ -223,7 +218,7 @@ Here are the associated screeshots:
 ![Screenshot1](images/13.png)
 ![Screenshot3](images/14.png)
 
-Find here the [code](/code/D.java) and [output](/code/results_D.csv).
+Find here the [code](/code/D.java) and [output](/code/result_d.csv).
 
 ## Sources:
 
