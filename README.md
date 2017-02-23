@@ -1,4 +1,4 @@
-# Massive Data Processing - Assignment 1 - Madriss Seksaoui
+# Massive Data Processing - Assignment 1 - Madriss Seksaoui - Msc. in DSBA
 <p align="center">
   <img src="Untitled-1-122jwp8[1].png">
 </p>
